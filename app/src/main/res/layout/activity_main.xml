@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/mobileNumber"
+        android:layout_width="372dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Enter Mobile No : "
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/vehicleNumber"/>
+
+    <EditText
+        android:id="@+id/vehicleNumber"
+        android:layout_width="372dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Enter Vehicle NUmber : "
+        android:inputType="text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileNumber"
+        app:layout_constraintBottom_toTopOf="@id/radiogroup"/>
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vehicleNumber"
+        app:layout_constraintBottom_toTopOf="@id/location">
+
+        <RadioButton
+            android:id="@+id/two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2-Wheeler"
+            tools:layout_editor_absoluteX="135dp"
+            tools:layout_editor_absoluteY="539dp" />
+
+        <RadioButton
+            android:id="@+id/three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-Wheeler"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="451dp" />
+
+        <RadioButton
+            android:id="@+id/four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4-Wheeler"
+            tools:layout_editor_absoluteX="109dp"
+            tools:layout_editor_absoluteY="383dp" />
+    </RadioGroup>
+
+    <AutoCompleteTextView
+        android:id="@+id/location"
+        android:layout_width="372dp"
+        android:layout_height="50dp"
+        android:hint="Enter Location : "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radiogroup"
+        app:layout_constraintBottom_toTopOf="@id/submit"/>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        app:layout_constraintEnd_toStartOf="@id/display"
+        app:layout_constraintBottom_toTopOf="@id/result"/>
+
+    <Button
+        android:id="@+id/display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display"
+        app:layout_constraintStart_toEndOf="@id/submit"
+        app:layout_constraintEnd_toStartOf="@id/paid"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        app:layout_constraintBottom_toTopOf="@id/result"/>
+
+
+    <Button
+        android:id="@+id/paid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paid"
+        app:layout_constraintStart_toEndOf="@id/display"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/location"
+        app:layout_constraintBottom_toTopOf="@id/result"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/display"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
